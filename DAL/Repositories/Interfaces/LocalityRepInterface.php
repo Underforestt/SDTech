@@ -4,7 +4,7 @@
 namespace SDTech\DAL\Repositories\Interfaces;
 
 
-interface LocalityRep extends Repository
+interface LocalityRepInterface extends Repository
 {
 
 }

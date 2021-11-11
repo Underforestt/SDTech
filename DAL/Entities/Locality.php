@@ -4,10 +4,20 @@
 namespace SDTech\DAL\Entities;
 
 
-class Locality
+use Illuminate\Database\Eloquent\Model;
+
+class Locality extends Model
 {
-    public int $id;
-    public string $name;
-    public int $population;
-    public array $diseases;
+    protected $table = 'locality';
+    public $timestamps = false;
+
+    protected $fillable = [
+        'name',
+        'population'
+    ];
+
+    public function diseases(){
+        return $this->belongsToMany(Disease::class, 'statistic');
+    }
 }
+

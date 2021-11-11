@@ -3,10 +3,16 @@
 
 namespace SDTech\DAL\Entities;
 
+use Illuminate\Database\Eloquent\Model;
 
-class Disease
+
+class Disease extends Model
 {
-    public int $id;
-    public string $name;
-    public int $caseAmount;
+    protected $table = 'disease';
+    public $timestamps = false;
+
+    protected $fillable = [
+        'name',
+        'caseAmount'
+    ];
 }

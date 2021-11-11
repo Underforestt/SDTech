@@ -4,7 +4,7 @@
 namespace SDTech\DAL\Repositories\Interfaces;
 
 
-interface DiseaseRep extends Repository
+interface DiseaseRepInterface extends Repository
 {
 
 }
