@@ -2,7 +2,9 @@
     "name": "user/s-dtech",
     "autoload": {
         "psr-4": {
-            "SDTech\\DAL\\": "DAL/"
+            "SDTech\\DAL\\": "DAL/",
+            "SDTech\\"
+            "DB\\": ""
         }
     },
     "authors": [
@@ -12,6 +14,8 @@
         }
     ],
     "require": {
-        "illuminate/database": "5.1.8"
+        "illuminate/database": "5.1.8",
+        "phpunit/phpunit": "^7.0",
+        "phpunit/dbunit": "^4.0"
     }
 }

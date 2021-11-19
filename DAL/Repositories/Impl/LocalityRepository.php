@@ -27,9 +27,6 @@ class LocalityRepository implements \SDTech\DAL\Repositories\Interfaces\Locality
             'population' => $properties['population']
         ]);
 
-        foreach ($properties['diseases'] as $disease){
-            $locality->diseases()->attach($disease->id);
-        }
         $locality->save();
     }
 
@@ -39,11 +36,6 @@ class LocalityRepository implements \SDTech\DAL\Repositories\Interfaces\Locality
         $locality->name = $properties['name'];
         $locality->population = $properties['population'];
 
-        if (isset($population['diseases'])){
-            foreach ($population['diseases'] as $disease){
-                $locality->diseases()->attach($disease->id);
-            }
-        }
         $locality->save();
     }
 
@@ -52,5 +44,12 @@ class LocalityRepository implements \SDTech\DAL\Repositories\Interfaces\Locality
         $locality = Locality::find($id);
         $locality->diseases()->delete();
         $locality->delete();
+    }
+
+    public static function addDisease(int $localityId, int $diseaseId){
+        $locality = Locality::find($localityId);
+        if ($locality->diseases()->find($diseaseId) === null){
+            $locality->diseases()->attach($diseaseId);
+        }
     }
 }

@@ -12,10 +12,11 @@ class DiseaseRepository implements DiseaseRepInterface
 
     public static function create($properties)
     {
-        Disease::create([
+        return Disease::create([
             'name' => $properties['name'],
             'caseAmount' => $properties['caseAmount']
         ]);
+
     }
 
     public static function update(int $id, $properties)
@@ -35,7 +36,10 @@ class DiseaseRepository implements DiseaseRepInterface
     public static function delete(int $id)
     {
         $disease = Disease::find($id);
-        $disease->delete();
+        if ($disease){
+            $disease->delete();
+        }
+        return null;
     }
 
     public static function getAll()
