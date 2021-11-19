@@ -3,7 +3,8 @@
     "autoload": {
         "psr-4": {
             "SDTech\\DAL\\": "DAL/",
-            "SDTech\\"
+            "SDTech\\BLL\\": "BLL",
+            "SDTech\\CCL||": "CCL",
             "DB\\": ""
         }
     },
