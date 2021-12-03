@@ -2,10 +2,7 @@
     "name": "user/s-dtech",
     "autoload": {
         "psr-4": {
-            "SDTech\\DAL\\": "DAL/",
-            "SDTech\\BLL\\": "BLL",
-            "SDTech\\CCL||": "CCL",
-            "DB\\": ""
+            "SDTech\\": "/"
         }
     },
     "authors": [

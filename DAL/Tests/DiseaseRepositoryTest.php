@@ -1,10 +1,9 @@
 <?php
 
 
-namespace SDTech\DAL\Tests;
+//namespace SDTech\DAL\Tests;
 
-require "Database.php";
-use DB\Database;
+
 use PHPUnit\Framework\TestCase;
 use SDTech\DAL\Entities\Disease;
 use SDTech\DAL\Repositories\Impl\DiseaseRepository;

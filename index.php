@@ -16,7 +16,6 @@ $db = new Database();
 //
 //$loc = LocalityRepository::get(2);
 //$loc->diseases()->delete();
-print_r(DiseaseRepository::get(10));
 
 //$loc->delete();
 //print_r($loc->diseases()->get()->toArray());

@@ -2,7 +2,7 @@
 <phpunit bootstrap="./vendor/autoload.php" colors="true">
     <testsuites>
         <testsuite name="Application Test Suite">
-            <directory>DAL/Tests/</directory>
+            <directory>BLL/Tests/</directory>
         </testsuite>
     </testsuites>
     <filter>
