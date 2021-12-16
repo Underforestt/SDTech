@@ -1,11 +1,11 @@
 <?php
 
-namespace SDTech\DB;
-require "vendor/autoload.php";
+namespace SDTech\Patterns;
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 
-class Database {
+
+class Database implements Prototype {
 
     public $capsule;
 
@@ -30,17 +30,17 @@ class Database {
         $this->capsule->bootEloquent();
     }
 }
-
-function clientCode()
-{
-    $p1 = new Database();
-
-    $p2 = clone $p1;
-    if ($p1->capsule === $p2->capsule) {
-        echo "Primitive field values have been carried over to a clone. Yay!\n";
-    } else {
-        echo "Primitive field values have not been copied. Booo!\n";
-    }
-}
-
-clientCode();
+//
+//function clientCode()
+//{
+//    $p1 = new Database();
+//
+//    $p2 = clone $p1;
+//    if ($p1->capsule === $p2->capsule) {
+//        echo "Primitive field values have been carried over to a clone. Yay!\n";
+//    } else {
+//        echo "Primitive field values have not been copied. Booo!\n";
+//    }
+//}
+//
+//clientCode();

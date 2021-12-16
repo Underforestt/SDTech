@@ -3,23 +3,24 @@
 
 namespace SDTech\BLL\DTO\Services\Impl;
 require 'C:\Users\user\Desktop\3курс\1семестр\Розробка ПО\SDtech\BLL\DTO\Services\Interfaces\DiseaseServiceInterface.php';
+require 'C:\Users\user\Desktop\3курс\1семестр\Розробка ПО\SDtech\Patterns\Singleton.php';
 require 'C:\Users\user\Desktop\3курс\1семестр\Розробка ПО\SDtech\vendor\autoload.php';
 use Exception;
 use SDTech\BLL\DTO\DiseaseDTO;
 use SDTech\BLL\DTO\Interfaces\DiseaseServiceInterface;
 use SDTech\CCL\SecurityContext;
 use SDTech\DAL\Repositories\Impl\LocalityRepository;
+use SDTech\DB\Singleton;
 
-class DiseaseService implements DiseaseServiceInterface
+class DiseaseService implements DiseaseServiceInterface, Singleton
 {
     public static ?DiseaseService $instance = null;
 
     protected function __construct(){}
     protected function __clone(){}
 
-    public static function getInstance(): DiseaseService
+    public static function getInstance()
     {
-        $cls = static::class;
         if (is_null(self::$instance)) {
             self::$instance = new static();
         }

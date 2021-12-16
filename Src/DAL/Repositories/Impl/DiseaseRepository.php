@@ -3,14 +3,13 @@
 
 namespace SDTech\DAL\Repositories\Impl;
 
-
 use SDTech\DAL\Entities\Disease;
 use SDTech\DAL\Repositories\Interfaces\DiseaseRepInterface;
 
 class DiseaseRepository implements DiseaseRepInterface
 {
 
-    public static function create($properties)
+    public function create($properties)
     {
         return Disease::create([
             'name' => $properties['name'],
@@ -19,7 +18,7 @@ class DiseaseRepository implements DiseaseRepInterface
 
     }
 
-    public static function update(int $id, $properties)
+    public function update(int $id, $properties)
     {
         $disease = Disease::find($id);
 
@@ -28,12 +27,12 @@ class DiseaseRepository implements DiseaseRepInterface
         $disease->save();
     }
 
-    public static function get(int $id)
+    public function get(int $id)
     {
         return Disease::find($id);
     }
 
-    public static function delete(int $id)
+    public function delete(int $id)
     {
         $disease = Disease::find($id);
         if ($disease){
@@ -42,7 +41,7 @@ class DiseaseRepository implements DiseaseRepInterface
         return null;
     }
 
-    public static function getAll()
+    public function getAll()
     {
         return Disease::all();
     }
